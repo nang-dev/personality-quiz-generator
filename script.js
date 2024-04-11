@@ -25,11 +25,9 @@ document.getElementById('start-button').addEventListener('click', function() {
     currentQuestion = 0;
     userAnswers = {};
     displayQuestion(); 
-    // userAnswers.userName = userName;
 });
 
 
-//click
 function attachButtonClickHandlers() {
     const choiceButtons = document.querySelectorAll('.large-rectangular');
     choiceButtons.forEach((button) => {
@@ -38,28 +36,10 @@ function attachButtonClickHandlers() {
 }
 
 
-
-//answers
 function handleAnswer(event) {
     const selectedOption = event.target;
     const answerKey = selectedOption.value;
-    const question = questions[currentQuestion];
-    const answer = question.answers[answerKey];
-
-    for (const dimension in answer.scores) {
-        userAnswers[dimension] = (userAnswers[dimension] || 0) + answer.scores[dimension];
-    }
-
-    // remove this when done debugging
-    // Display the scores for each letter
-    
-    //const scoresContainer = document.querySelector('.scores-container');
-    //scoresContainer.innerHTML = `
-    //    <p>E Score: ${userAnswers['E'] || 0}, S Score: ${userAnswers['S'] || 0}, T Score: ${userAnswers['T'] || 0}, P Score: ${userAnswers['P'] || 0}</p>
-    //    <p>I Score: ${userAnswers['I'] || 0}, N Score: ${userAnswers['N'] || 0}, F Score: ${userAnswers['F'] || 0}, J Score: ${userAnswers['J'] || 0}</p>
-    //
-    //`;
-    // to here
+    userAnswers[answerKey] = (userAnswers[answerKey] || 0) + 1;
 
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
@@ -68,9 +48,6 @@ function handleAnswer(event) {
         showResult();
     }
 }
-
-// ...
-
 
 function showResult() {
     const resultElement = document.getElementById('result');
@@ -87,10 +64,7 @@ function showResult() {
         topLetters[pair] = topOption;
     });
 
-    //each pair
     const result = pairs.map(pair => topLetters[pair]).join('');
-
-    //show result
     const personalityData = resultOptions[result];
     if (personalityData) {
         resultTextContainer.innerHTML = `
@@ -107,15 +81,12 @@ function showResult() {
     document.getElementById('restart-button').style.display = 'block'; // Show the restart button
 }
 
-
-
-//Function to restart the quiz
 function restartQuiz() {
     currentQuestion = 0;
     userAnswers = {};
     document.getElementById('result').style.display = 'none';
     document.getElementById('quiz').style.display = 'block';
-    displayQuestion(); // Start the quiz from the beginning
+    displayQuestion();
 }
 
 document.getElementById('restart-button').addEventListener('click', restartQuiz);

@@ -12,7 +12,7 @@ This is a generator that will create a working website for this - all you have t
 
 ### 1. Create storyline!
 
-The way the algorithm works is that each questions is related to one area of the MBTI test. Each question rewards a point to the corresponding personality. For example:
+The way the algorithm works is that each questions is related to one area of the MBTI test (E or I, N or S, T or F, P or J). Each question rewards a point to the corresponding personality. For example:
 
 ```
 {
@@ -21,11 +21,9 @@ The way the algorithm works is that each questions is related to one area of the
     "answers": {
       "F": {
         "text": "I'm just so tired and can't wait to go home. Why does everyday feel the same...",
-        "scores": { "T": 0, "F": 1 }
       },
       "T": {
         "text": "Should I rest or work first when I get home? Most importantly, what's for dinner?",
-        "scores": { "T": 1, "F": 0 }
       }
     }
   },
@@ -52,4 +50,4 @@ It should work locally now! See next steps to get this actually online.
 
 ## Get website online:
 
-WIP!
+Just follow: https://pages.github.com/ !
