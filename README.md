@@ -2,13 +2,13 @@
 
 Have you ever wanted to make one of those trendy, viral personality quiz like the [Taiwan Expo Personality Quiz](https://www.designexpo.org.tw/en/news/67)? Well now you can!
 
-This is a generator that will create a working website for this - all you have to do is the fun part, the art!
+This is a generator that will create a working website for this. All you have to do is the fun part - the art!
 
-## Try an example!
+## Generate An Example Quiz:
 1. Run: `python3 generate.py --example`
 2. Open with browser: `index.html`
 
-## Instructions
+## Instructions To Create Your Own Quiz:
 
 ### 1. Create storyline!
 
@@ -35,9 +35,11 @@ You can do this manually in by editing assets/questions.js. UI for this coming s
 
 The required art assets to be made are:
 
-assets/main.gif: asset on the main page
-assets/questions/question_{question_number}.gif: asset each of question pages (1 through 16)
-assets/results/{personality_type}.gif:  assert for each of the resulting personality types
+`assets/main.gif`: asset on the main page
+
+`assets/questions/question_{question_number}.gif`: asset each of question pages (1 through 16)
+
+`assets/results/{personality_type}.gif`:  assert for each of the resulting personality types
 
 ### 3. Generate site!
 
