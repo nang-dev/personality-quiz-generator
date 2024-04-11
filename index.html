@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmos Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="start-page" id="start-page">
+            <h1>Cosmos Quiz</h1>
+            <p>Discover which cosmic element you are!</p>
+            <img src="assets/main.gif" class="top-image">
+            <button id="start-button" class="start-button">Play</button>
+            <br>
+            <p1>Get ready to explore the cosmos within you.</p1>
+        </div>
+
+        <div class="quiz-page" id="quiz-page" style="display: none;">
+            <div id="quiz">
+            </div>
+            <div id="result" style="display: none;">
+                <p>Feel free to share your results!</p>
+                <div class="result-image">
+                    <img id="result-image" src="" alt="Result Image">
+                </div>
+                <br>
+                <p>Made by <a href="https://youtube.com/nang88" target="_blank">@nang</a></p>
+                <br>
+                <button class="do-not-press-button" id="restart-button">Restart!</button>
+                <button class="do-not-press-button" id="restart-button">Want to make your own personality quiz?</button>
+                <div class="result-content">
+                    <div class="result-text">
+                    </div>
+                </div>
+            </div>
+        <footer>
+            <a href="https://youtube.com/nang88" target="_blank" style="font-size: 10px; text-decoration: none;">&copy; 2024 nang</a>
+        </footer>
+        </div>
+    </div>
+    <script src="example/assets/questions/questions.js"></script>
+    <script src="example/assets/results/results.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
