@@ -29,7 +29,7 @@ The way the algorithm works is that each questions is related to one area of the
   },
 ```
 
-You can do this manually in by editing assets/questions.js. UI for this coming soon!
+You can do this my opening `ui/question_generator.html` in a web browser. You can also do this manually by editing `assets/questions.js`. UI for this coming soon!
 
 ### 2. Create art!
 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Questions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .question-block {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        textarea {
+            width: 90%;
+            max-width: 600px;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-top: 20px;
+            height: 100px; /* Initial small height */
+            transition: height 0.3s ease-in-out;
+        }
+        .instructions {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Questions</h1>
+    <form id="questionsForm">
+        <div id="questionsContainer">
+            <!-- Questions will be generated here -->
+        </div>
+        <button type="button" onclick="generateCode()">Generate Code</button>
+    </form>
+    <div class="instructions">
+        Copy and paste this into <code>assets/questions.js</code>:
+    </div>
+    <textarea id="output" placeholder="Generated JS will appear here for copying..."></textarea>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <script>
+        const questionsContainer = document.getElementById('questionsContainer');
+        const output = document.getElementById('output');
+
+        function initQuestions() {
+            for (let i = 0; i < 12; i++) {
+                const questionBlock = document.createElement('div');
+                questionBlock.className = 'question-block';
+                questionBlock.innerHTML = `
+                    <label>Question ${i + 1}:</label>
+                    <input type="text" id="question${i}" placeholder="Enter question">
+                    <label>Answer 1 Text:</label>
+                    <input type="text" id="answer1text${i}" placeholder="Enter answer text">
+                    <select id="answer1type${i}">
+                        <option value="E">E</option>
+                        <option value="I">I</option>
+                        <option value="T">T</option>
+                        <option value="F">F</option>
+                        <option value="N">N</option>
+                        <option value="S">S</option>
+                        <option value="P">P</option>
+                        <option value="J">J</option>
+                    </select>
+                    <label>Answer 2 Text:</label>
+                    <input type="text" id="answer2text${i}" placeholder="Enter answer text">
+                    <select id="answer2type${i}">
+                        <option value="E">E</option>
+                        <option value="I">I</option>
+                        <option value="T">T</option>
+                        <option value="F">F</option>
+                        <option value="N">N</option>
+                        <option value="S">S</option>
+                        <option value="P">P</option>
+                        <option value="J">J</option>
+                    </select>
+                `;
+                questionsContainer.appendChild(questionBlock);
+            }
+        }
+
+        function generateCode() {
+            let questions = [];
+            for (let i = 0; i < 12; i++) {
+                const question = document.getElementById(`question${i}`).value;
+                const answer1text = document.getElementById(`answer1text${i}`).value;
+                const answer1type = document.getElementById(`answer1type${i}`).value;
+                const answer2text = document.getElementById(`answer2text${i}`).value;
+                const answer2type = document.getElementById(`answer2type${i}`).value;
+                questions.push({
+                    question: question,
+                    answers: {
+                        [answer1type]: { text: answer1text },
+                        [answer2type]: { text: answer2text }
+                    }
+                });
+            }
+            output.value = `const questions = ${JSON.stringify(questions, null, 2)};`;
+            output.style.height = '400px'; // Increase the height of textarea
+        }
+
+        function copyToClipboard() {
+            output.select();
+            document.execCommand('copy');
+        }
+
+        window.onload = initQuestions;
+    </script>
+</body>
+</html>
