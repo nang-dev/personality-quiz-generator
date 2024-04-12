@@ -224,26 +224,32 @@ question-image {
     object-fit: cover; /* To maintain aspect ratio */
 }
 
+.button-container {
+    display: flex; /* Use flexbox to manage layout */
+    flex-direction: column; /* Align buttons in a column */
+    align-items: center; /* Center buttons horizontally */
+    justify-content: center; /* Center buttons vertically if container height is set */
+}
+
 .do-not-press-button {
     font-family: 'Comfortaa', sans-serif;
     background-color: #f46b6b; /* Red */
     color: #fff;
-    padding: 20px; /* Adjust padding */
+    padding: 25px 25px; /* Adjust padding to fit text */
     border: none;
-    border-radius: 50%; /* Make it a circle */
+    border-radius: 10px; /* Rounded edges */
     cursor: pointer;
-    font-size: 14px; /* Adjust font size */
+    font-size: 16px; /* Adjust font size */
     margin-top: 10px;
     display: inline-block;
     text-decoration: none; /* Remove default link underline */
-    width: 100px; /* Set width to maintain circular shape */
-    height: 100px; /* Set height to maintain circular shape */
-    line-height: 1.5; /* Adjust line height */
+    width: auto; /* Auto width to fit text */
+    min-width: 160px; /* Minimum width */
+    height: auto; /* Auto height to fit text */
+    line-height: normal; /* Normal line height */
     text-align: center; /* Horizontally center content */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
 }
-
-
 
 .do-not-press-button:hover {
     background-color: #bd2828; /* Darker red on hover */
