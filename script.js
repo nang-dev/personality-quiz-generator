@@ -50,9 +50,6 @@ function handleAnswer(event) {
 }
 
 function showResult() {
-    const resultElement = document.getElementById('result');
-    const resultTextContainer = document.querySelector('.result-text');
-    const resultImage = document.getElementById('result-image');
     const topLetters = {};
 
     const pairs = ["IE", "NS", "TF", "PJ"];
@@ -65,20 +62,14 @@ function showResult() {
     });
 
     const result = pairs.map(pair => topLetters[pair]).join('');
-    const personalityData = resultOptions[result];
-    if (personalityData) {
-        resultTextContainer.innerHTML = `
-        `;
-
-        resultImage.src = personalityData.image;
-        resultImage.alt = `${personalityData.image} Image`;
-    } else {
-
-    }
-
-    document.getElementById('quiz').style.display = 'none'; // Hide the quiz
-    document.getElementById('result').style.display = 'block'; // Show the result
-    document.getElementById('restart-button').style.display = 'block'; // Show the restart button
+    const resultTypes = {
+        "ISTJ": 0, "ISFJ": 1, "INFJ": 2, "INTJ": 3,
+        "ISTP": 4, "ISFP": 5, "INFP": 6, "INTP": 7,
+        "ESTP": 8, "ESFP": 9, "ENFP": 10, "ENTP": 11,
+        "ESTJ": 12, "ESFJ": 13, "ENFJ": 14, "ENTJ": 15
+    };
+    const resultNumber = resultTypes[result];
+    window.location.href = `results.html?result=${resultNumber}`;
 }
 
 function restartQuiz() {
