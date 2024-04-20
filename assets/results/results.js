@@ -56,4 +56,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const resultData = resultOptions[resultNumber];
         document.getElementById('result-image').src = resultData.image;
     }
+    const shareButton = document.getElementById('share-instagram');
+    if (shareButton) {
+        shareButton.addEventListener('click', function() {
+            const resultImage = document.getElementById('result-image');
+            if (resultImage && resultImage.src) {
+                // Trigger image download for manual sharing
+                const link = document.createElement('a');
+                link.href = resultImage.src;
+                link.download = 'ShareYourResult.png'; // Suggest a filename for saving
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+    }
 });
