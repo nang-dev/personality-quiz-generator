@@ -35,11 +35,13 @@ You can do this my opening `ui/question_generator.html` in a web browser. You ca
 
 The required art assets to be made are:
 
-`assets/main.gif`: asset on the main page
+`assets/main.gif`: asset on the main page. This should have the dimensions of around 2500px x 2500px.
 
-`assets/questions/question_{question_number}.gif`: asset each of question pages (1 through 16)
+`assets/questions/question_{question_number}.gif`: asset each of question pages (1 through 16). These should have the dimensions of around 2500px x 2500px.
 
-`assets/results/{personality_type}.gif`:  assert for each of the resulting personality types
+`assets/results/{personality_type}.gif`:  assert for each of the resulting personality types. This should have the dimensions of around 1500px x 2000px.
+
+Note that these dimensions are not strict and can be flexible!
 
 ### 3. Generate site!
 
