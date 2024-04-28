@@ -9,7 +9,7 @@ body {
     align-items: center;
     height: 1000;
     /*hight: 100vd;;*/
-    
+
 }
 
 .dark {
@@ -23,7 +23,7 @@ body {
     align-items: center;
     height: 1000;
     /*hight: 100vd;;*/
-    
+
 }
 
 .quiz-container {
@@ -37,7 +37,7 @@ body {
    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
     width: 90%; /* Set width to 90% of the viewport */
     max-width: 400px; /* Set max-width to 400px */
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .dark-container {
@@ -51,14 +51,14 @@ body {
    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
     width: 90%; /* Set width to 90% of the viewport */
     max-width: 400px; /* Set max-width to 400px */
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 
 h1 {
     font-family: 'Comfortaa', sans-serif;
     font-size: 28px;
-    font-weight: bold; 
+    font-weight: bold;
 
 }
 p{
@@ -179,7 +179,7 @@ question-image {
 
 .start-button {
     font-family: 'Comfortaa', sans-serif;
-    background-color: #843b62; 
+    background-color: #843b62;
     border: none;
     color: #ffffff;
     padding: 15px 32px;
@@ -213,7 +213,7 @@ question-image {
 }
 
 .restart-button:hover {
-    background-color: #ffb997; 
+    background-color: #ffb997;
     color: rgb(132, 107, 107);
 }
 
@@ -281,7 +281,7 @@ a.no-underline:hover {
     display: inline-block;
     cursor: pointer;
 }
-  
+
 .tooltip {
     visibility: hidden;
     width: 200px;
@@ -299,7 +299,7 @@ a.no-underline:hover {
     opacity: 0;
     transition: opacity 0.3s;
 }
-  
+
 .hover-container:hover .tooltip {
     visibility: visible;
     opacity: 1;
@@ -309,9 +309,9 @@ a.no-underline:hover {
 footer {
     text-align: center;
 }
-  
+
 footer p {
-    font-size: 10px; 
+    font-size: 10px;
     color: #843b62;
 }
 
@@ -323,19 +323,19 @@ footer p {
     position: relative;
     display: inline-block; /* Ensure the container wraps around the image */
 }
-  
+
   /* for the image */
 .top-image2 {
     display: block;
     width: 100%; /* Ensure the image fills its container */
     height: auto; /* Maintain aspect ratio */
 }
-  
+
   /* for the invisible button */
 .invisible-button {
     position: absolute;
-    top: 170px; 
-    left: 300px; 
+    top: 170px;
+    left: 300px;
     width: 50px;
     height: 50px;
     background-color: transparent;
@@ -344,4 +344,22 @@ footer p {
     margin: 0;
     cursor: pointer;
     outline: none;
+}
+
+#instructions {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f9f9f9; /* Light background color for contrast */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    max-width: 80%; /* Constrain width for readability */
+    text-align: center; /* Center the text */
+}
+
+#instructions p {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 12px; /* Smaller font size for paragraphs within the instructions */
+    color: #555; /* Dark gray color for readability */
+    margin: 5px 0; /* Reduced margin for compact appearance */
 }
